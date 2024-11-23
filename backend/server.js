@@ -24,7 +24,7 @@ app.use('/api/food',foodRouter)
 
 
 app.get("/", (req,res)=>{
-    res.send("API WORKING")
+    res.send("API WORKING PROPERLY")
 })
 
 app.listen(port, ()=>{
