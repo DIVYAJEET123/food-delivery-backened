@@ -7,20 +7,20 @@ import fs from 'fs';
 
 const addFood = async (req,res) => {
 
-    if (req.file) {
-        let image_filename = `${req.file.filename}`;
-        // ... other code
-      } else {
-        console.error('No file uploaded'); 
-        // Handle the error, e.g., return an error response
-      }
+    // if (req.file) {
+    //     let image_filename = `${req.file.filename}`;
+    //     // ... other code
+    //   } else {
+    //     console.error('No file uploaded'); 
+    //     // Handle the error, e.g., return an error response
+    //   }
 
     const food = new foodModel({
         name :req.body.name,
         description:req.body.description,
         price:req.body.price,
         category:req.body.category,
-        image:image_filename
+        // image:image_filename
     })
 
     try{
