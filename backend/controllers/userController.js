@@ -5,21 +5,20 @@ import validator from "validator"
 
 
 //login user
-
-export const loginUser = async (req,res)  => {
+const loginUser = async (req,res)  => {
 
 }
 
 
 //register user
 
-const createToken  = async (req,res) => {
-    return jwt.sign({id},proccess.env.JWT_SECRET) 
+    const createToken  = (id) => {
+        return jwt.sign({id},process.env.JWT_SECRET) 
 }
 
-export const registerUser = async (req,res) => {
+    const registerUser = async (req,res) => {
 
-    const {name,password,email} =  req.body;
+        const {name,password,email} =  req.body;
     
     try{
         const exists = await userModel.findOne({email});
@@ -58,3 +57,4 @@ export const registerUser = async (req,res) => {
     }
 }
 
+export {loginUser,registerUser}
